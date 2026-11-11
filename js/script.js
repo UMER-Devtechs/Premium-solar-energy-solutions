@@ -2,14 +2,24 @@
 const menuToggle = document.getElementById('menuToggle');
 const nav = document.getElementById('nav');
 
-menuToggle.addEventListener('click', () => {
+// Menu ko open/close karne ke liye
+menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation(); // Event ko bubble hone se rokta hai
     nav.classList.toggle('active');
 });
 
+// Jab kisi menu link par click ho, to menu band ho jaye
 document.querySelectorAll('.nav a').forEach(link => {
     link.addEventListener('click', () => {
         nav.classList.remove('active');
     });
+});
+
+// Agar user screen par kisi aur jagah click kare, to bhi menu band ho jaye
+document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+        nav.classList.remove('active');
+    }
 });
 
 // ===== Header Scroll Effect =====

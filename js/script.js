@@ -2,20 +2,20 @@
 const menuToggle = document.getElementById('menuToggle');
 const nav = document.getElementById('nav');
 
-// Menu ko open/close karne ke liye
+// Menu open/close karne ke liye
 menuToggle.addEventListener('click', (e) => {
-    e.stopPropagation(); // Event ko bubble hone se rokta hai
+    e.stopPropagation(); // Event ko bubble hone se roke
     nav.classList.toggle('active');
 });
 
-// Jab kisi menu link par click ho, to menu band ho jaye
+// Jab menu ke andar kisi link par click ho, to band ho jaye
 document.querySelectorAll('.nav a').forEach(link => {
     link.addEventListener('click', () => {
         nav.classList.remove('active');
     });
 });
 
-// Agar user screen par kisi aur jagah click kare, to bhi menu band ho jaye
+// Jab menu ke BAHAR (screen par kisi aur jagah) tap/click karein, to band ho jaye
 document.addEventListener('click', (e) => {
     if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
         nav.classList.remove('active');

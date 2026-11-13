@@ -307,3 +307,45 @@ footer{padding:12px 0 10px;font-size:11px}.ft{display:flex;align-items:center;ga
     .solutions-grid { grid-template-columns: 1fr; }
     .projects-grid { grid-template-columns: 1fr; }
 }
+
+/* ===== MOBILE VIEW FIX (Buttons & Highlight) ===== */
+@media (max-width: 768px) {
+    /* 1. Section ka background thoda deep aur highlighted karein */
+    .pk, .so, .pj, .ts {
+        background: #eaf4fb !important;
+        border: 1px solid #d0e3f5;
+        border-radius: 20px;
+        padding: 25px 15px !important;
+        margin-top: 25px;
+        box-shadow: 0 4px 15px rgba(2, 51, 91, 0.03);
+    }
+    /* 2. Heading aur Button ko alag alag line par le aayein */
+    .hr {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    /* 3. Button ko poori width dein */
+    .hr .btn.ol {
+        width: 100%;
+        justify-content: center;
+        height: 42px;
+        font-size: 13px;
+        background: #fff;
+        border: 1.5px solid var(--n);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    /* ===== MOBILE TOUCH SLIDER FIX ===== */
+    .carousel-track {
+        animation: scrollProjects 45s linear infinite !important; 
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Touch karne par slides ruk jayengi */
+    .carousel-track:hover,
+    .carousel-track:active {
+        animation-play-state: paused !important;
+    }
+}

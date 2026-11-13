@@ -310,7 +310,6 @@ footer{padding:12px 0 10px;font-size:11px}.ft{display:flex;align-items:center;ga
 
 /* ===== MOBILE VIEW FIX (Buttons & Highlight) ===== */
 @media (max-width: 768px) {
-    /* 1. Section ka background thoda deep aur highlighted karein */
     .pk, .so, .pj, .ts {
         background: #eaf4fb !important;
         border: 1px solid #d0e3f5;
@@ -319,14 +318,12 @@ footer{padding:12px 0 10px;font-size:11px}.ft{display:flex;align-items:center;ga
         margin-top: 25px;
         box-shadow: 0 4px 15px rgba(2, 51, 91, 0.03);
     }
-    /* 2. Heading aur Button ko alag alag line par le aayein */
     .hr {
         flex-direction: column;
         align-items: flex-start !important;
         gap: 15px;
         margin-bottom: 20px;
     }
-    /* 3. Button ko poori width dein */
     .hr .btn.ol {
         width: 100%;
         justify-content: center;
@@ -343,7 +340,6 @@ footer{padding:12px 0 10px;font-size:11px}.ft{display:flex;align-items:center;ga
         -webkit-overflow-scrolling: touch;
     }
 
-    /* Touch karne par slides ruk jayengi */
     .carousel-track:hover,
     .carousel-track:active {
         animation-play-state: paused !important;

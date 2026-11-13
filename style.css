@@ -66,40 +66,140 @@ h1{font-size:clamp(30px,4.3vw,46px);line-height:1.08;font-weight:700;margin:14px
 .pc .btn .i{font-size:13px}
 .bd{position:absolute;top:12px;right:14px;background:var(--o);color:#fff;font:600 10px Poppins,sans-serif;padding:3px 10px;border-radius:6px}
 
-/* ===== PRODUCTS & PRICES (Premium Gradient & Icons) ===== */
-.pdx { padding: 60px 0 40px; background: linear-gradient(180deg, #ffffff 0%, #f4f8fb 100%); }
-.price-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.price-row { background: linear-gradient(145deg, #ffffff, #f0f7ff); border: 1px solid #e2e8f0; border-radius: 16px; padding: 22px; box-shadow: 0 6px 20px rgba(0,0,0,0.03); transition: all 0.3s ease; display: flex; flex-direction: column; position: relative; overflow: hidden; }
-.price-row:hover { transform: translateY(-6px); box-shadow: 0 15px 35px rgba(2, 51, 91, 0.1); border-color: rgba(250, 100, 3, 0.4); background: linear-gradient(145deg, #ffffff, #e6f3ff); }
-.pr-brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 16px; color: var(--n); margin-bottom: 15px; padding-bottom: 12px; border-bottom: 2px dashed #dbe4ee; }
-.brand-icon { width: 28px; height: 28px; object-fit: contain; background: #fff; padding: 4px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-.pr-details { display: flex; flex-direction: column; gap: 8px; }
-.pr-details span { display: flex; justify-content: space-between; align-items: center; background: #ffffff; padding: 8px 12px; border-radius: 8px; font-size: 13px; color: #475569; border: 1px solid #eef2f7; box-shadow: 0 2px 5px rgba(0,0,0,0.01); }
-.pr-details b { color: var(--o); font-weight: 700; font-size: 13.5px; background: #fff7ed; padding: 3px 8px; border-radius: 6px; }
-.pf { font-size: 12px; color: var(--t); text-align: center; font-style: italic; margin-top: 30px; }
+/* ===== PRODUCTS & PRICES (Hover Accordion - Left Aligned) ===== */
+.pdx {
+    padding: 60px 0 40px;
+    background: linear-gradient(180deg, #ffffff 0%, #f4f8fb 100%);
+}
 
-/* ===== CALL FOR PRICE BUTTON ===== */
+.accordion-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.acc-item {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+    overflow: hidden; 
+    cursor: pointer;
+}
+
+.acc-item:hover {
+    border-color: rgba(250, 100, 3, 0.4);
+    box-shadow: 0 8px 25px rgba(2, 51, 91, 0.08);
+}
+
+.acc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--n);
+    transition: background 0.2s;
+}
+
+.acc-item:hover .acc-header {
+    background: #f8fafc;
+}
+
+.acc-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.acc-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--o);
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 6px rgba(250, 100, 3, 0.4);
+}
+
+.acc-content {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #fcfdfd;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+.acc-item:hover .acc-content {
+    max-height: 500px;
+    opacity: 1;
+    padding: 0 20px 20px 20px;
+}
+
+.rate-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background: #fff;
+    border: 1px solid #eef2f7;
+    border-radius: 8px;
+    font-size: 13.5px;
+    color: #475569;
+    transition: all 0.2s ease;
+}
+
+.rate-row:hover {
+    background: #f8fafc;
+    border-color: #dbe4ee;
+}
+
+.rate-row b {
+    color: var(--o);
+    font-weight: 700;
+    background: #fff7ed;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
 .call-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #fff7ed; /* Pehle jesa light orange background */
-    color: var(--o) !important; /* Pehle jesa orange text */
+    background: #fff7ed;
+    color: var(--o) !important;
     padding: 4px 12px;
     border-radius: 6px;
     font-size: 12px;
     font-weight: 700;
     text-decoration: none;
+    border: 1px solid #ffedd5;
     transition: all 0.2s ease;
-    border: 1px solid #ffedd5; /* Halki si border */
 }
 
 .call-btn:hover {
-    background: #ffedd5; /* Hover par thoda aur dark light orange */
+    background: #ffedd5;
     transform: translateY(-2px);
 }
 
-/* Projects Carousel (Seamless & Sharp) */
+.pf {
+    font-size: 12px;
+    color: var(--t);
+    text-align: center;
+    font-style: italic;
+    margin-top: 30px;
+}
+
+/* Projects Carousel */
 .pj { padding: 40px 0 20px; overflow: hidden; }
 .carousel-wrapper { width: 100%; overflow: hidden; position: relative; padding: 10px 0; -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); }
 .carousel-track { display: flex; gap: 15px; width: max-content; animation: scrollProjects 60s linear infinite; transform: translateZ(0); -webkit-backface-visibility: hidden; backface-visibility: hidden; }
@@ -152,16 +252,15 @@ footer{padding:12px 0 10px;font-size:11px}.ft{display:flex;align-items:center;ga
 
 @media (max-width: 1024px) {
     .g3 { grid-template-columns: repeat(2, 1fr) !important; }
-    .price-list { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 900px) {
     .carousel-track figure { width: calc((100vw - 40px) / 2); }
 }
 @media (max-width: 768px) {
     .g3 { grid-template-columns: 1fr !important; }
-    .price-list { grid-template-columns: 1fr; }
-    .price-row { padding: 16px; }
-    .pr-brand { font-size: 15px; }
+    .acc-header { font-size: 14px; padding: 14px 16px; }
+    .rate-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .rate-row b, .rate-row .call-btn { align-self: flex-end; }
 }
 @media (max-width: 600px) {
     .carousel-track figure { width: calc(100vw - 40px); }

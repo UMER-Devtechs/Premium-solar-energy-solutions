@@ -1,0 +1,9 @@
+; mongodb key
+dbKey=mongodb+srv://umernodejs_db_user:groot@cluster0.mrnuwkj.mongodb.net/
+
+# redis
+redisHost=redis-13870.c17.us-east-1-4.ec2.cloud.redislabs.com
+redisPort=13870
+redisPassword:Y0g5v9P6CzTrCzlQIa7lGmHZzou01GvD
+
+

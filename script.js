@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const track = document.getElementById('projectTrack');
     if(track) {
         const items = track.innerHTML;
-        // Track ko 3 dafa clone kar rahe hain taake loop lamba ho aur gap na aaye
         track.innerHTML = items + items + items; 
     }
 });
